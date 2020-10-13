@@ -42,9 +42,24 @@ class MainActivity : AppCompatActivity() {
                 param(FirebaseAnalytics.Param.ITEM_NAME, "name")
                 param(FirebaseAnalytics.Param.CONTENT_TYPE, "type")
             }
+        }
 
+
+        btSignUp.setOnClickListener{
+            firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SIGN_UP){
+                param(FirebaseAnalytics.Param.METHOD, "method")
+            }
+        }
+
+
+        btShare.setOnClickListener {
+             firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SHARE){
+                param(FirebaseAnalytics.Param.CONTENT_TYPE, "contentType")
+            }
 
         }
+
+
     }
 
 
